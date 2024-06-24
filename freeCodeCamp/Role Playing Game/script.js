@@ -159,7 +159,7 @@ function sellWeapon() {
   if (inventory.length > 1) {
     gold += 15;
     goldText.innerText = gold;
-    let currentWeapon = inventory.shift();
+    let currentWeapon = inventory.shift(); // shift() removes the first element from an array. unshift() adds an element to the beginning of an array.
     text.innerText = "You sold a " + currentWeapon + ".";
     text.innerText += " In your inventory you have: " + inventory;
   } else {
