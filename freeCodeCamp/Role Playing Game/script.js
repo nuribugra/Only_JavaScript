@@ -128,8 +128,8 @@ function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
     health += 10;
-    goldText.innerText = gold;
-    healthText.innerText = health;
+    goldText.innerText = gold; // Update the gold text
+    healthText.innerText = health; // Update the health text
   } else {
     text.innerText = "You do not have enough gold to buy health.";
   }
@@ -195,12 +195,14 @@ function attack() {
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
   } else {
     text.innerText += " You miss.";
   }
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
+
+  // Check if the player or monster is dead
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
@@ -210,6 +212,8 @@ function attack() {
       defeatMonster();
     }
   }
+
+  // Check if the player's weapon breaks
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
     currentWeapon--;
