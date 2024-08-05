@@ -23,12 +23,8 @@ function addEntry() {
   <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
   <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
   <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
-  <input
-    type="number"
-    min="0"
-    id="${entryDropdown.value}-${entryNumber}-calories"
-    placeholder="Calories"
-  />`;
+  <input type="number" min="0" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories"/>
+  `;
   targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
 
@@ -57,11 +53,13 @@ function calculateCalories(e) {
   const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
   const surplusOrDeficit = remainingCalories < 0 ? 'Surplus' : 'Deficit';
   output.innerHTML = `
-  <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
-  <hr>
-  <p>${budgetCalories} Calories Budgeted</p>
-  <p>${consumedCalories} Calories Consumed</p>
-  <p>${exerciseCalories} Calories Burned</p>
+    <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
+
+    <hr>
+    
+    <p>${budgetCalories} Calories Budgeted</p>
+    <p>${consumedCalories} Calories Consumed</p>
+    <p>${exerciseCalories} Calories Burned</p>
   `;
 
   output.classList.remove('hide');
