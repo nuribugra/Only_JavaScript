@@ -79,6 +79,7 @@ const allSongs = [
 ];
 
 const audio = new Audio();
+
 let userData = {
   songs: [...allSongs],
   currentSong: null,
@@ -96,6 +97,7 @@ const playSong = (id) => {
     audio.currentTime = userData?.songCurrentTime;
   }
   userData.currentSong = song;
+
   playButton.classList.add("playing");
 
   highlightCurrentSong();
@@ -133,7 +135,7 @@ const playPreviousSong = () => {
 };
 
 const shuffle = () => {
-  userData?.songs.sort(() => Math.random() - 0.5);
+  userData?.songs.sort(() => Math.random() - 0.5); // Fisher-Yates shuffle algorithm
   userData.currentSong = null;
   userData.songCurrentTime = 0;
 
