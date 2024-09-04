@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+:root {
+    --white: #F5F7F8;
+    --yellow: #FCDE70;
+    --orange: #E8B86D;
+    --green: #185519;
+}
+
+
+
+/* CSS Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Design */
+body {
+    background-color: var(--white);
+    color: #454545;
+    font-family: "SUSE", sans-serif;
+}
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    padding-top: 15rem;
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--orange);
+    font-weight: 700;   
+}
+
+.palindrome-div {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.description {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.palindrome-input {
+    width: 30%;
+    margin: auto;
+    padding: 1.5rem 3.5rem;
+    font-size: 2.5rem;
+    color: var(--green);
+
+    border-radius: 40px;
+    border-style: solid;
+    border-width: 0.25rem;
+    border-color: var(--yellow);
+    outline: none;
+
+    text-align: center;
+}
+
+.palindrome-btn {
+    width: 20%;
+    margin: auto;
+    padding: 1.5rem;
+    font-size: 2rem;
+    border-radius: 40px;
+    background-color: var(--green);
+    color: var(--white);
+}
+.palindrome-btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.hidden {
+    display: none;
+}
+
+.results-div {
+    font-size: 3rem;
+    color: #454545;
+
+    width: 30%;
+    margin: 5rem auto;
+    background-color: var(--yellow);
+
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+    .palindrome-input {
+        width: 80%;
+        padding: 1rem 2.5rem;
+    }
+
+    .palindrome-btn {
+        width: 60%;
+    }
+
+    .results-div {
+        font-size: 1.5rem;
+    }
+}
