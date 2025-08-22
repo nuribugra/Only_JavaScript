@@ -1,4 +1,3 @@
-const { log } = require('console');
 const os = require('os');
 
 // info about current user

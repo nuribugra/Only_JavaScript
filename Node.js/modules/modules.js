@@ -11,3 +11,5 @@ console.log(names.name2);
 
 sayHi(names.name1);
 sayHi(names.name2);
+
+console.log(names.secret);
